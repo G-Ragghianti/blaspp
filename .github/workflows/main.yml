@@ -46,7 +46,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test build
         run: |
-          source ~/spack_setup
+          source /home/github/spack_setup
           sload cmake
           mkdir build && cd build
           cmake ..
