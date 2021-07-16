@@ -31,3 +31,5 @@ jobs:
           mkdir build && cd build
           cmake ..
           make -j8
+          ldd test/tester
+          ./run_tests.py --blas1 --blas2 --blas3 --quick
