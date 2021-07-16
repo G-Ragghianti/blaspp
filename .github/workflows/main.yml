@@ -32,4 +32,4 @@ jobs:
           cmake ..
           make -j8
           ldd test/tester
-          test test && ./run_tests.py --blas1 --blas2 --blas3 --quick
+          cd test && ./run_tests.py --blas1 --blas2 --blas3 --quick
