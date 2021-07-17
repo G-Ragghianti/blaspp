@@ -48,9 +48,8 @@ jobs:
         run: |
           source /home/github/spack_setup
           sload cmake
-          sload openblas@0.3.10
+          sload intel-mkl
           mkdir build && cd build
           cmake ..
           make -j8
-          ldd test/tester
-          cd test && ./run_tests.py --blas1 --quick
+          cd test && ./run_tests.py --blas1 --blas2 --blas3 --quick
