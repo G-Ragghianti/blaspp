@@ -48,6 +48,7 @@ jobs:
         run: |
           source /home/github/spack_setup
           sload cmake
+          sload openblas@0.3.10
           mkdir build && cd build
           cmake ..
           make -j8
