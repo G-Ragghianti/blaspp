@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2021, University of Tennessee. All rights reserved.
+# Copyright (c) 2017-2022, University of Tennessee. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the BSD 3-Clause license. See the accompanying LICENSE file.
@@ -93,12 +93,15 @@ add_executable(
     test_batch_hemm_device.cc
     test_batch_her2k_device.cc
     test_batch_herk_device.cc
+    test_schur_gemm.cc
     test_batch_symm_device.cc
     test_batch_syr2k_device.cc
     test_batch_syrk_device.cc
     test_batch_trmm_device.cc
     test_batch_trsm_device.cc
+    test_scal_device.cc
     test_swap_device.cc
+    test_copy_device.cc
     test_gemm_device.cc
     test_hemm_device.cc
     test_her2k_device.cc

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (c) 2017-2021, University of Tennessee. All rights reserved.
+# Copyright (c) 2017-2022, University of Tennessee. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the BSD 3-Clause license. See the accompanying LICENSE file.
@@ -276,7 +276,9 @@ if (opts.blas1):
 
 if (opts.blas1_device):
     cmds += [
+    [ 'dev-scal',  dtype + n + incx_pos    ],
     [ 'dev-swap',  dtype + n + incx + incy ],
+    [ 'dev-copy',  dtype + n + incx + incy ],
     ]
 
 # Level 2
@@ -334,6 +336,7 @@ if (opts.batch_blas3):
 if (opts.blas3_device):
     cmds += [
     [ 'dev-gemm',  dtype         + layout + align + transA + transB + mnk ],
+    [ 'schur-gemm',dtype         + align + ' --dim 512x512x32:64:32' ],
     [ 'dev-hemm',  dtype         + layout + align + side + uplo + mn ],
     [ 'dev-symm',  dtype         + layout + align + side + uplo + mn ],
     [ 'dev-trmm',  dtype         + layout + align + side + uplo + trans + diag + mn ],

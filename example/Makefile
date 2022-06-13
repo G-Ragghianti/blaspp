@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2021, University of Tennessee. All rights reserved.
+# Copyright (c) 2017-2022, University of Tennessee. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the BSD 3-Clause license. See the accompanying LICENSE file.
@@ -8,14 +8,13 @@
 # Sadly, pkg-config doesn't provide a way to query CXX,
 # CXXFLAGS (only cflags), CPPFLAGS, or LDFLAGS.
 
-#CXX = g++
-
 #-------------------------------------------------------------------------------
 # Set CXXFLAGS and LIBS
 pkg_exists := $(shell pkg-config --exists blaspp; echo $$?)
 ifeq ($(pkg_exists),0)
 
   # Get flags from pkg-config.
+  CXX      = $(shell pkg-config --variable CXX blaspp)
   CXXFLAGS = $(shell pkg-config --cflags blaspp)
   LIBS     = $(shell pkg-config --libs   blaspp)
 

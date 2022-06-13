@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2021, University of Tennessee. All rights reserved.
+# Copyright (c) 2017-2022, University of Tennessee. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the BSD 3-Clause license. See the accompanying LICENSE file.
@@ -17,7 +17,7 @@ cmake_minimum_required( VERSION 3.15 )
 
 project(
     blaspp
-    VERSION 2021.04.01
+    VERSION 2022.05.00
     LANGUAGES CXX
 )
 
@@ -233,7 +233,9 @@ add_library(
     src/device_symm.cc
     src/device_syr2k.cc
     src/device_syrk.cc
+    src/device_scal.cc
     src/device_swap.cc
+    src/device_copy.cc
     src/device_trmm.cc
     src/device_trsm.cc
     src/device_utils.cc
