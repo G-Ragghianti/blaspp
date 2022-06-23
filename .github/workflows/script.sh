@@ -3,4 +3,4 @@
 arg1=$1
 
 echo arg1=$arg1
-echo maker=$maker
+echo maker=${matrix.maker}
